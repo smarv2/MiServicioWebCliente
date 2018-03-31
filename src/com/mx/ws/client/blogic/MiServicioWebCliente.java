@@ -23,9 +23,14 @@ public class MiServicioWebCliente {
      */
     public static void main(String[] args) {
         String nombre;
-        String saludo;
+        String saludo = null;
         nombre = "Mario Alan Ramirez Vazquez";
-        saludo = saluda(nombre);
+        try {
+            saludo = saluda(nombre);    
+        } catch (Exception e) {
+            LOG.error("Error en la respuesta del WS.", e);
+        }
+        
         LOG.info(saludo);
     }
 
